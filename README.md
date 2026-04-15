@@ -1,8 +1,6 @@
 # DSA 210 Project — Demand Analysis for Plastic Buckets in the Dairy Industry
 
 **Author:** Omer Dogru  
-**Course:** DSA 210 — Introduction to Data Science (Spring 2026)  
-**Institution:** Sabancı University
 
 ## Project Overview
 
@@ -16,8 +14,10 @@ This project analyzes the factors that affect weekly demand for plastic buckets 
 4. Does Brent crude oil price (a proxy for plastic raw material cost) correlate with sales?
 5. Does the USD/TRY exchange rate genuinely affect demand, or is the apparent correlation spurious?
 
-## Data Sources 
+## Data Sources
+
 | Dataset | Source | Frequency | Period |
+|---|---|---|---|
 | Plastic bucket sales (tons) | Family factory records | Weekly | 2023–2025 |
 | Temperature & precipitation (10 cities) | [Open-Meteo Historical API](https://open-meteo.com/) | Daily → aggregated to weekly | 2023–2025 |
 | Brent crude oil price | Yahoo Finance (`BZ=F`) | Daily → weekly | 2023–2025 |
@@ -27,6 +27,7 @@ The Turkey-wide temperature is computed as a population-weighted average across 
 
 ## Repository Structure
 
+```
 dsa210-data-science-project/
 ├── README.md
 ├── AI_USAGE.md
@@ -44,20 +45,19 @@ dsa210-data-science-project/
         │   └── usdtry_daily.csv
         └── processed/
             └── merged_weekly.csv
+```
 
 ## How to Reproduce
-
-pip install -r requirements.txt
-cd dsa210
-python collect_data.py
-jupyter notebook 01_eda.ipynb
 
 1. Clone the repository and install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
-2. Place the sales file at `data/raw/haftalik_satis_2023_2025.xlsx`.
-3. Run the data collection script (this fetches weather and financial data from public APIs):
+2. Navigate into the project folder:
+   ```bash
+   cd dsa210
+   ```
+3. Run the data collection script (this fetches weather and financial data from public APIs and merges them with the sales data):
    ```bash
    python collect_data.py
    ```
@@ -67,14 +67,6 @@ jupyter notebook 01_eda.ipynb
    jupyter notebook 02_hypothesis_tests.ipynb
    ```
 
-## Progress
-
-- [x] **17 March:** GitHub repo created
-- [x] **31 March:** Project proposal submitted
-- [x] **14 April:** Data collection, EDA, and hypothesis tests
-- [ ] **5 May:** Machine learning models
-- [ ] **18 May:** Final report and code submission
-
 ## Key Findings So Far
 
 1. **Strong upward trend** in sales across 2023–2025, independent of seasonality.
@@ -83,11 +75,6 @@ jupyter notebook 01_eda.ipynb
 4. **Brent oil shows weak association** with sales volume (oil affects cost, not demand directly).
 5. **USD/TRY raw correlation is spurious** — both series trend upward; after first-differencing, the relationship is much weaker.
 
-## Next Steps
-
-- Feature engineering: lagged temperature variables, rolling averages, season indicators, time-trend index.
-- Apply multiple ML models (Linear Regression, Ridge, Random Forest, XGBoost) with time-series cross-validation.
-- Compare performance and interpret feature importance.
 
 ## AI Tool Disclosure
 
