@@ -27,25 +27,30 @@ The Turkey-wide temperature is computed as a population-weighted average across 
 
 ## Repository Structure
 
-```
-dsa210/
+dsa210-data-science-project/
 ├── README.md
 ├── AI_USAGE.md
 ├── requirements.txt
-├── collect_data.py              # Fetches & merges all external datasets
-├── 01_eda.ipynb                 # Exploratory Data Analysis
-├── 02_hypothesis_tests.ipynb    # Statistical hypothesis tests
-└── data/
-    ├── raw/
-    │   ├── haftalik_satis_2023_2025.xlsx
-    │   ├── weather_daily.csv
-    │   ├── brent_daily.csv
-    │   └── usdtry_daily.csv
-    └── processed/
-        └── merged_weekly.csv
-```
+├── dsa210_proposal.pdf
+└── dsa210/                       # All project files
+    ├── collect_data.py
+    ├── 01_eda.ipynb
+    ├── 02_hypothesis_tests.ipynb
+    └── data/
+        ├── raw/
+        │   ├── haftalik_satis_2023_2025.xlsx
+        │   ├── weather_daily.csv
+        │   ├── brent_daily.csv
+        │   └── usdtry_daily.csv
+        └── processed/
+            └── merged_weekly.csv
 
 ## How to Reproduce
+
+pip install -r requirements.txt
+cd dsa210
+python collect_data.py
+jupyter notebook 01_eda.ipynb
 
 1. Clone the repository and install dependencies:
    ```bash
