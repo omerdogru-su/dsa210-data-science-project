@@ -189,7 +189,7 @@ dsa210-data-science-project/
 ├── README.md
 ├── AI_USAGE.md
 ├── requirements.txt
-├── DSA210_Final_Report_Omer_Dogru.pdf
+├── finalreport.pdf
 ├── dsa210_proposal.pdf
 ├── plots/                        # Visualizations for README
 └── dsa210/
@@ -216,4 +216,4 @@ jupyter notebook 03_ml_models.ipynb
 
 ## AI Tool Disclosure
 
-AI tools (Claude by Anthropic and Chatgpt) were used for code debugging, and structuring. All analytical decisions were made by me. Full disclosure: [AI_USAGE.md](AI_USAGE.md)
+AI tools (Claudec and Chatgpt) were used for code debugging, and structuring. All analytical decisions were made by me. Full disclosure: [AI_USAGE.md](AI_USAGE.md)
